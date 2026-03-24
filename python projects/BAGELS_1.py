@@ -21,7 +21,7 @@ while Attempts <= 10:
         continue
 
     if guess == secret_number:
-        print("¡Lo lograste, felicidades! 🎉")
+        print("You did it, congratulations! ")
         break
 
     Clues = []
@@ -40,4 +40,4 @@ while Attempts <= 10:
     Attempts += 1
 
 if Attempts > 10:
-    print(f"\nSe acabaron los intentos. El número era: {secret_number}")
+    print(f"\nThe attempts are over. The number was: {secret_number}")
