@@ -26,12 +26,14 @@ for i in range(people):
     else:
         seen.add(birthday)
 
-print("\nBirthdays generated:")
+print("\nGenerated birthdays:")
 for b in birthdays:
-    print(f"{MONTHS[b[0]-1]} {b[1]}")
+    print(f"{MONTHS[b[0] - 1]} {b[1]}")
 
 if len(repetidos) > 0:
     print("\nThere is at least one matching birthday!")
-    print("Repeated birthdays:", repetidos)
+    print("Repeated birthdays:")
+    for b in set(repetidos):
+        print(f"{MONTHS[b[0] - 1]} {b[1]}")
 else:
     print("\nNo matching birthdays.")
