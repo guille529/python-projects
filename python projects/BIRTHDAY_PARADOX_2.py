@@ -6,9 +6,9 @@ people = int(input("> "))
 
 birthdays = []
 seen = set()
-repetidos = []
+duplicates = []
 
-MONTHS = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
+months = ('Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun',
           'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec')
 
 days_in_month = (31, 28, 31, 30, 31, 30,
@@ -22,18 +22,25 @@ for i in range(people):
     birthdays.append(birthday)
 
     if birthday in seen:
-        repetidos.append(birthday)
+        duplicates.append(birthday)
     else:
         seen.add(birthday)
 
 print("\nGenerated birthdays:")
 for b in birthdays:
-    print(f"{MONTHS[b[0] - 1]} {b[1]}")
+    print(f"{months[b[0] - 1]} {b[1]}")
 
-if len(repetidos) > 0:
-    print("\nThere is at least one matching birthday!")
+print("\nResult:")
+
+if len(duplicates) > 0:
+    print("There is at least one matching birthday!")
     print("Repeated birthdays:")
-    for b in set(repetidos):
-        print(f"{MONTHS[b[0] - 1]} {b[1]}")
+
+    for b in set(duplicates):
+        print(f"{months[b[0] - 1]} {b[1]}")
+
+    probability = (len(duplicates) / people) * 100
+    print(f"\nObserved repetition chance: {probability:.2f}%")
 else:
-    print("\nNo matching birthdays.")
+    print("No matching birthdays.")
+    print("\nObserved repetition chance: 0.00%")
