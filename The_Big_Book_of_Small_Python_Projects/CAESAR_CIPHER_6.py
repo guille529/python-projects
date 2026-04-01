@@ -31,7 +31,7 @@ def decrypt(message, key):
             result += letter
     return result
 
-print('Caesar Cipher, by Al Sweigart al@inventwithpython.com')
+print('Caesar Cipher')
 print('The Caesar cipher encrypts letters by shifting them over by a')
 print('key number.\n')
 
