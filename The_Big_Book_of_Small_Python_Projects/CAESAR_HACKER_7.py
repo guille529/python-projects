@@ -13,8 +13,7 @@ def decrypt(message, key):
     for letter in message:
         if letter in abecedario_dict:
             current_position = abecedario_dict[letter]
-            # El % 26 asegura que aunque la clave sea 100, 
-            # siempre se mantenga dentro del rango del diccionario.
+            
             new_position = (current_position - key) % 26
             result += num_to_letter[new_position]
         else:
@@ -43,12 +42,12 @@ while True:
                 print("\nError: The key must be a number.\n")
                 continue
         else:
-            # Iniciamos la fuerza bruta hasta 100
+            
             start_key = 1
             max_limit = 100
             
             while start_key <= max_limit:
-                # Definimos el final del bloque actual (máximo 100)
+                
                 end_key = min(start_key + 9, max_limit)
                 
                 print(f"\n--- Testing keys {start_key} to {end_key} ---")
